@@ -1,5 +1,7 @@
-# string-similarity
+# string-similarity-mod
+This is a modified version of [string-similarity](https://github.com/aceakash/string-similarity). The `findBestMatch` function returns a `ratings` object that contains the `target`, `rating`, and the `index` of the element in targetStrings (Array).
 
+# Original README
 Finds degree of similarity between two strings, based on [Dice's Coefficient](http://en.wikipedia.org/wiki/S%C3%B8rensen%E2%80%93Dice_coefficient), which is mostly better than [Levenshtein distance](http://en.wikipedia.org/wiki/Levenshtein_distance).
 
 ## Table of Contents
