@@ -1,7 +1,15 @@
 # string-similarity-mod
-This is a modified version of [string-similarity](https://github.com/aceakash/string-similarity). The `findBestMatch` function returns a `ratings` object that contains the `target`, `rating`, and the `index` of the element in targetStrings (Array).
+This is a modified version of [string-similarity](https://github.com/aceakash/string-similarity).
 
-I am modding this package entirely for my personal use. I offer no support or assurance if you plan to use it for your projects. Use the original package instead.
+> **DISCLAIMER:** I modified this package for my personal use. I offer no support or assurance if you plan to use it for your projects. Use the original package instead.
+
+List of modifications:
+1. MOD 1: In `findBestMatch` function, return `index` of the element in targetStrings (Array) along with the `target` and `rating`.
+2. MOD 2: Add threshold argument to the `findBestMatch` function.
+
+Read about the rationale of the mods in the comments in [`index.js`](/src/index.js).
+
+---
 
 # Original README
 Finds degree of similarity between two strings, based on [Dice's Coefficient](http://en.wikipedia.org/wiki/S%C3%B8rensen%E2%80%93Dice_coefficient), which is mostly better than [Levenshtein distance](http://en.wikipedia.org/wiki/Levenshtein_distance).
