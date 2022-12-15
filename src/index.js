@@ -36,19 +36,18 @@ function compareTwoStrings(first, second) {
 	return (2.0 * intersectionSize) / (first.length + second.length - 2);
 }
 
-function findBestMatch(mainString, targetStrings, threshold) {
+function findBestMatch(mainString, targetStrings, _threshold=0) {
 	if (!areArgsValid(mainString, targetStrings)) throw new Error('Bad arguments: First argument should be a string, second should be an array of strings. Third is an optional integer.');
 	
 	const ratings = [];
 	let bestMatchIndex = 0;
-	threshold = 0;
 
 	for (let i = 0; i < targetStrings.length; i++) {
 		const currentTargetString = targetStrings[i];
 		const currentRating = compareTwoStrings(mainString, currentTargetString)
 
 		// MOD 2
-		if (currentRating < threshold) continue;
+		if (currentRating < _threshold) continue;
 		// Why do this?
 		// This way the user is saved a for-loop later on to filter out the matches that are below the threshold
 		// END MOD 2
