@@ -37,7 +37,7 @@ function compareTwoStrings(first, second) {
 }
 
 function findBestMatch(mainString, targetStrings, _threshold=0) {
-	if (!areArgsValid(mainString, targetStrings)) throw new Error('Bad arguments: First argument should be a string, second should be an array of strings. Third is an optional integer.');
+	if (!areArgsValid(mainString, targetStrings, _threshold)) throw new Error('Bad arguments: First argument should be a string, second should be an array of strings. Third is an optional number between 0 and 1.');
 	
 	const ratings = [];
 	let bestMatchIndex = 0;
@@ -75,10 +75,11 @@ function findBestMatch(mainString, targetStrings, _threshold=0) {
 	return { ratings: ratings, bestMatch: bestMatch, bestMatchIndex: bestMatchIndex };
 }
 
-function areArgsValid(mainString, targetStrings) {
+function areArgsValid(mainString, targetStrings, threshold) {
 	if (typeof mainString !== 'string') return false;
 	if (!Array.isArray(targetStrings)) return false;
 	if (!targetStrings.length) return false;
 	if (targetStrings.find( function (s) { return typeof s !== 'string'})) return false;
+	if (typeof threshold !== 'number') return false;
 	return true;
 }
