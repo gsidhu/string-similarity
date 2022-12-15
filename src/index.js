@@ -62,7 +62,10 @@ function findBestMatch(mainString, targetStrings, _threshold=0) {
 		// So the user can find the match in the original array by using this index
 		// END MOD 1
 		if (currentRating > ratings[bestMatchIndex].rating) {
-			bestMatchIndex = i
+			// MOD 2 (cont.) Have to change this because the i refers to the index of the targetStrings array
+			// but bestMatchIndex refers to the ratings array which becomes a subset of targetStrings if threshold != 0
+			bestMatchIndex = ratings.length - 1
+			// END MOD 2
 		}
 	}
 	

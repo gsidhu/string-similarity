@@ -1,6 +1,6 @@
 {
   "name": "string-similarity-mod",
-  "version": "1.1.1",
+  "version": "1.1.2",
   "description": "Modded version of string-similarity.",
   "main": "src/index.js",
   "scripts": {
